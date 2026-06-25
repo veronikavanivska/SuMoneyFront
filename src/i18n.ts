@@ -1,0 +1,301 @@
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import { storageKeys } from "./constants/storage";
+
+const resources = {
+  pl: {
+    translation: {
+      common: {
+        appName: "SuMoney",
+        save: "Zapisz",
+        cancel: "Anuluj",
+        delete: "Usuń",
+        create: "Dodaj",
+        search: "Szukaj",
+        loading: "Ładowanie...",
+        error: "Wystąpił błąd",
+        noData: "Brak danych",
+        all: "Wszystkie",
+        yes: "Tak",
+        no: "Nie",
+        logout: "Wyloguj",
+        language: "Język",
+        polish: "Polski",
+        english: "Angielski"
+      },
+      nav: {
+        home: "Start",
+        dashboard: "Dashboard",
+        delegations: "Delegacje",
+        statistics: "Statystyki",
+        profile: "Profil"
+      },
+      auth: {
+        loginTitle: "Zaloguj się",
+        registerTitle: "Utwórz konto",
+        email: "E-mail",
+        password: "Hasło",
+        oldPassword: "Stare hasło",
+        newPassword: "Nowe hasło",
+        signIn: "Zaloguj",
+        signUp: "Zarejestruj",
+        noAccount: "Nie masz konta?",
+        haveAccount: "Masz już konto?",
+        goToRegister: "Załóż konto",
+        goToLogin: "Przejdź do logowania",
+        welcome: "Zarządzaj delegacjami i wydatkami bez chaosu.",
+        changePassword: "Zmień hasło"
+      },
+      dashboard: {
+        title: "Dashboard",
+        welcome: "Witaj w SuMoney",
+        subtitle: "Twoje delegacje, wydatki i statystyki w jednym miejscu.",
+        currentYear: "Bieżący rok",
+        quickActions: "Szybkie akcje",
+        addDelegation: "Nowa delegacja",
+        addExpense: "Nowy wydatek",
+        monthlyOverview: "Podsumowanie miesięczne",
+        latestDelegations: "Ostatnie delegacje",
+        expensesByCurrency: "Wydatki wg walut"
+      },
+      delegations: {
+        title: "Delegacje",
+        newDelegation: "Nowa delegacja",
+        details: "Szczegóły delegacji",
+        titleField: "Tytuł",
+        destination: "Miejsce",
+        startDate: "Data rozpoczęcia",
+        endDate: "Data zakończenia",
+        description: "Opis",
+        dateFrom: "Od",
+        dateTo: "Do",
+        viewExpenses: "Wydatki",
+        viewStats: "Statystyki",
+        contains: "Szukaj w tytule, miejscu, opisie"
+      },
+      expenses: {
+        title: "Wydatki",
+        newExpense: "Nowy wydatek",
+        titleField: "Tytuł",
+        amount: "Kwota",
+        currency: "Waluta",
+        category: "Kategoria",
+        expenseDate: "Data wydatku",
+        note: "Notatka",
+        receipt: "Paragon",
+        viewReceipt: "Zobacz paragon",
+        hasReceipt: "Ma paragon",
+        addReceipt: "Dodaj paragon",
+        contains: "Szukaj w tytule lub notatce",
+        amountFrom: "Kwota od",
+        amountTo: "Kwota do",
+        chooseFile: "Wybierz plik",
+        takePhoto: "Zrób zdjęcie",
+        clearReceipt: "Usuń",
+        noReceiptSelected: "Nie wybrano pliku",
+        cameraTitle: "Zdjęcie paragonu",
+        capturePhoto: "Zrób zdjęcie",
+        cameraUnavailable: "Nie można uruchomić kamery. Możesz wybrać zdjęcie z pliku.",
+      },
+      statistics: {
+        title: "Statystyki",
+        monthly: "Miesięczne",
+        delegation: "Delegacja",
+        delegationStats: "Statystyka delegacji",
+        totalsByCurrency: "Razem wg waluty",
+        categories: "Kategorie",
+        currentMonthTotals: "Razem w bieżącym miesiącu",
+        currentMonthCategories: "Kategorie w bieżącym miesiącu",
+        expensesCount: "Liczba wydatków",
+        totalAmount: "Suma",
+        chooseYear: "Rok",
+        chooseDelegation: "Wybierz delegację",
+        month: "Miesiąc",
+        subtitle: "Analizuj wydatki miesięcznie, według walut, kategorii i delegacji.",
+        yearTotal: "Suma w roku",
+        currentMonth: "Bieżący miesiąc",
+        expensesInYear: "Wydatki w roku",
+        activeCurrency: "Aktywna waluta"
+      },
+      categories: {
+        FOOD: "Jedzenie",
+        HOTEL: "Hotel",
+        TRANSPORT: "Transport",
+        FUEL: "Paliwo",
+        PARKING: "Parking",
+        TICKETS: "Bilety",
+        TAXI: "Taxi",
+        OFFICE_SUPPLIES: "Materiały biurowe",
+        OTHER: "Inne"
+      },
+      months: {
+        1: "Sty",
+        2: "Lut",
+        3: "Mar",
+        4: "Kwi",
+        5: "Maj",
+        6: "Cze",
+        7: "Lip",
+        8: "Sie",
+        9: "Wrz",
+        10: "Paź",
+        11: "Lis",
+        12: "Gru"
+      }
+    }
+  },
+  en: {
+    translation: {
+      common: {
+        appName: "SuMoney",
+        save: "Save",
+        cancel: "Cancel",
+        delete: "Delete",
+        create: "Create",
+        search: "Search",
+        loading: "Loading...",
+        error: "Something went wrong",
+        noData: "No data",
+        all: "All",
+        yes: "Yes",
+        no: "No",
+        logout: "Logout",
+        language: "Language",
+        polish: "Polish",
+        english: "English"
+      },
+      nav: {
+        home: "Home",
+        dashboard: "Dashboard",
+        delegations: "Delegations",
+        statistics: "Statistics",
+        profile: "Profile"
+      },
+      auth: {
+        loginTitle: "Sign in",
+        registerTitle: "Create account",
+        email: "E-mail",
+        password: "Password",
+        oldPassword: "Old password",
+        newPassword: "New password",
+        signIn: "Sign in",
+        signUp: "Sign up",
+        noAccount: "No account?",
+        haveAccount: "Already have an account?",
+        goToRegister: "Create account",
+        goToLogin: "Go to login",
+        welcome: "Manage delegations and expenses without chaos.",
+        changePassword: "Change password"
+      },
+      dashboard: {
+        title: "Dashboard",
+        welcome: "Welcome to SuMoney",
+        subtitle: "Your delegations, expenses and statistics in one place.",
+        currentYear: "Current year",
+        quickActions: "Quick actions",
+        addDelegation: "New delegation",
+        addExpense: "New expense",
+        monthlyOverview: "Monthly overview",
+        latestDelegations: "Latest delegations",
+        expensesByCurrency: "Expenses by currency"
+      },
+      delegations: {
+        title: "Delegations",
+        newDelegation: "New delegation",
+        details: "Delegation details",
+        titleField: "Title",
+        destination: "Destination",
+        startDate: "Start date",
+        endDate: "End date",
+        description: "Description",
+        dateFrom: "From",
+        dateTo: "To",
+        viewExpenses: "Expenses",
+        viewStats: "Statistics",
+        contains: "Search title, destination, description"
+      },
+      expenses: {
+        title: "Expenses",
+        newExpense: "New expense",
+        titleField: "Title",
+        amount: "Amount",
+        currency: "Currency",
+        category: "Category",
+        expenseDate: "Expense date",
+        note: "Note",
+        receipt: "Receipt",
+        viewReceipt: "View receipt",
+        hasReceipt: "Has receipt",
+        addReceipt: "Add receipt",
+        contains: "Search title or note",
+        amountFrom: "Amount from",
+        amountTo: "Amount to",
+        chooseFile: "Choose file",
+        takePhoto: "Take photo",
+        clearReceipt: "Clear",
+        noReceiptSelected: "No file selected",
+        cameraTitle: "Receipt photo",
+        capturePhoto: "Capture photo",
+        cameraUnavailable: "Camera cannot be started. You can choose an image file instead.",
+      },
+      statistics: {
+        title: "Statistics",
+        monthly: "Monthly",
+        delegation: "Delegation",
+        delegationStats: "Delegation statistics",
+        totalsByCurrency: "Totals by currency",
+        categories: "Categories",
+        currentMonthTotals: "Current month totals",
+        currentMonthCategories: "Current month categories",
+        expensesCount: "Expenses count",
+        totalAmount: "Total",
+        chooseYear: "Year",
+        chooseDelegation: "Choose delegation",
+        month: "Month",
+        subtitle: "Analyze expenses monthly, by currency, category and delegation.",
+        yearTotal: "Year total",
+        currentMonth: "Current month",
+        expensesInYear: "Expenses this year",
+        activeCurrency: "Active currency"
+      },
+      categories: {
+        FOOD: "Food",
+        HOTEL: "Hotel",
+        TRANSPORT: "Transport",
+        FUEL: "Fuel",
+        PARKING: "Parking",
+        TICKETS: "Tickets",
+        TAXI: "Taxi",
+        OFFICE_SUPPLIES: "Office supplies",
+        OTHER: "Other"
+      },
+      months: {
+        1: "Jan",
+        2: "Feb",
+        3: "Mar",
+        4: "Apr",
+        5: "May",
+        6: "Jun",
+        7: "Jul",
+        8: "Aug",
+        9: "Sep",
+        10: "Oct",
+        11: "Nov",
+        12: "Dec"
+      }
+    }
+  }
+};
+
+const storedLanguage = localStorage.getItem(storageKeys.language) || "pl";
+
+i18n.use(initReactI18next).init({
+  resources,
+  lng: storedLanguage,
+  fallbackLng: "pl",
+  interpolation: {
+    escapeValue: false
+  }
+});
+
+export default i18n;
