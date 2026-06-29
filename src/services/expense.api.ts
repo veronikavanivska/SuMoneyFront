@@ -66,6 +66,6 @@ export const expenseApi = {
   },
 
   receiptBlob(delegationId: number | string, expenseId: number | string) {
-    return apiBlob(`/api/delegations/${delegationId}/expenses/${expenseId}/receipt`);
+    return apiBlob(`/api/delegations/${delegationId}/expenses/${expenseId}/receipt-url`);
   }
 };
